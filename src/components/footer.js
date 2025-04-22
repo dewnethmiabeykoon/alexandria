@@ -23,8 +23,8 @@ export default function Footer() {
         {/* Social Media Section */}
         <div className="text-left">
           <h3 className="font-bold text-lg mb-2">Social Media</h3>
-          <p><a href="#" className="underline">Facebook</a></p>
-          <p><a href="#" className="underline">Instagram</a></p>
+          <p><a href="https://facebook.com/alexandriabattaramulla" className="underline">Facebook</a></p>
+          <p><a href="https://instagram.com/institute_of_alexandria" className="underline">Instagram</a></p>
         </div>
         
         {/* Location Section with Map */}

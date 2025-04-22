@@ -30,19 +30,89 @@ const slides = [
   },
 ];
 
+// Advertisement Pop-up Component
+function AdvertisementPopup({ onClose }) {
+  return (
+    <motion.div
+      className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 pointer-events-none"
+      initial={{ opacity: 0, y: -70 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -70 }}
+      transition={{ duration: 0.8 }}
+    >
+      <motion.div
+        className="relative rounded-lg shadow-lg overflow-hidden pointer-events-auto"
+        style={{
+          backgroundImage: 'url(/images/01.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          height: '400px',
+          width: '700px',
+        }}
+        initial={{ scale: 0.8 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.3 }}
+      >
+        {/* Close Button */}
+        <button
+          onClick={onClose}
+          className="absolute top-3 right-3 bg-black bg-opacity-50 text-white p-2 rounded-full text-lg hover:bg-opacity-75 transition"
+        >
+          ✖
+        </button>
+
+        {/* Text Container */}
+        <div className="absolute top-6 right-8 text-black text-right w-2/3">
+          <h2 className="text-4xl font-extrabold uppercase leading-tight">
+            Alexandria Science Exhibition
+          </h2>
+          <h3 className="text-5xl font-bold text-black mt-1">2025</h3>
+
+          <p className="text-lg mt-4 text-justify leading-relaxed">
+            Join us for an exciting educational experience showcasing talents and innovations. 
+            This event features cutting-edge projects, hands-on workshops, and interactive exhibits.
+          </p>
+
+          {/* Button */}
+          <div className="mt-6 flex justify-center">
+            <button
+              className="bg-yellow-500 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-600 transition duration-300 shadow-md"
+              onClick={onClose}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+}
+
 export default function Home() {
   const [current, setCurrent] = useState(0);
+  const [showPopup, setShowPopup] = useState(true); // Show the ad on page load
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
     }, 4000);
-    return () => clearInterval(interval);
+
+    const popupTimeout = setTimeout(() => {
+      setShowPopup(false); // Close popup after 3 seconds
+    }, 5000);
+
+    return () => {
+      clearInterval(interval);
+      clearTimeout(popupTimeout);
+    };
   }, []);
 
   return (
     <div>
       <Nav />
+
+      {/* Show Advertisement Popup */}
+      {showPopup && <AdvertisementPopup onClose={() => setShowPopup(false)} />}
 
       {/* Hero Slider */}
       <motion.div
@@ -89,7 +159,7 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-gray-600 bg-opacity-60 flex flex-col justify-center items-center text-white px-10 py-6 rounded-lg">
           <h2 className="text-5xl font-bold mb-4 text-center">Alexandria Science Exhibition 2025</h2>
-          <p className="text-xl text-center max-w-2xl mb-6">
+          <p className="text-xl text-white text-center max-w-2xl mb-6">
             Join us for an exciting educational experience and showcase talents and innovations by our bright minds.
           </p>
           <motion.button
@@ -104,11 +174,11 @@ export default function Home() {
       </motion.div>
       <br/><br/>
 
-       {/* Syllabus Section */}
-       <div className="text-center my-12">
-        <h2 className="text-5xl font-bold">We cover Syllabus for</h2><br/><br/>
+      {/* Syllabus Section */}
+      <div className="text-center my-12">
+        <h2 className="text-5xl text-black font-bold">We cover Syllabus for</h2><br/><br/>
         <div className="flex justify-center gap-2 mt-2 flex-wrap">
-          <div className="bg-yellow-200 p-10 rounded-md w-120">
+          <div className="bg-gray-300 p-10 rounded-md w-120">
             <h3 className="font-bold text-3xl">Local</h3><br/><br/>
             <ul className="text-left list-disc pl-6 mt-2 text-xl">
               <li>Available for students from Grade 1–13</li>
@@ -116,14 +186,14 @@ export default function Home() {
               <li>Mathematics, Commerce, ICT, Science</li>
             </ul>
           </div>
-          <div className="bg-purple-200 p-10 rounded-md w-120">
+          <div className="bg-gray-300 p-10 rounded-md w-120">
             <h3 className="font-bold text-3xl">Edexcel</h3><br/><br/>
             <ul className="text-left list-disc pl-6 mt-2 text-xl">
               <li>Available for students from Grade 1–A2</li>
               <li>Mathematics, Chemistry, Biology, Human Biology, Physics, ICT, Computer Science</li>
             </ul>
           </div>
-          <div className="bg-blue-200 p-10 rounded-md w-120">
+          <div className="bg-gray-300 p-10 rounded-md w-120">
             <h3 className="font-bold text-3xl">Cambridge</h3><br/><br/>
             <ul className="text-left list-disc pl-6 mt-2 text-xl">
               <li>Available for students from Grade 1–A2</li>
@@ -134,21 +204,17 @@ export default function Home() {
       </div>
 
       {/* Our Courses Section */}
-      <motion.div 
+      <motion.div
         className="my-16 text-center"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="text-5xl font-bold text-gray-800 mb-8">Our Courses</h2><br/><br/>
+        <h2 className="text-5xl font-bold text-black mb-8">Our Courses</h2><br/><br/>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
-          {[
-            { title: "Web Development", image: "/images/web-dev.png" },
-            { title: "Microsoft 365", image: "/images/microsoft-365.png" },
-            { title: "Python Programming", image: "/images/python.png" }
-          ].map((course, index) => (
-            <motion.div 
-              key={index} 
+          {[{ title: "Web Development", image: "/images/web-dev.png" }, { title: "Microsoft 365", image: "/images/microsoft-365.png" }, { title: "Python Programming", image: "/images/python.png" }].map((course, index) => (
+            <motion.div
+              key={index}
               className="bg-black shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

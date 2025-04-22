@@ -40,7 +40,7 @@ export default function PastPapers() {
 </div>
         {/* Local Section */}
         <Section title="Local Exams" id="local">
-          <Category title="O/L" color="bg-gradient-to-r from-red-300 to-gray-300">
+          <Category title="O/L" color="bg-gradient-to-r from-green-900 to-gray-300">
             <PaperLink title="Sinhala" href="/pastPapers/local/ol/sinhala" />
             <PaperLink title="Health" href="/pastPapers/local/ol/health" />
             <PaperLink title="History" href="/pastPapers/local/ol/history" />
@@ -50,7 +50,7 @@ export default function PastPapers() {
             <PaperLink title="English" href="/pastPapers/local/ol/english" />
             <PaperLink title="Science" href="/pastPapers/local/ol/science" />
           </Category>
-          <Category title="A/L" color="bg-gradient-to-r from-purple-300 to-gray-300">
+          <Category title="A/L" color="bg-gradient-to-r from-green-900 to-gray-300">
             <PaperLink title="ICT" href="/pastPapers/local/al/ict" />
             <PaperLink title="Biology" href="/pastPapers/local/al/biology" />
             <PaperLink title="Econ" href="/pastPapers/local/al/econ" />
@@ -62,7 +62,7 @@ export default function PastPapers() {
 
         {/* Edexcel Section */}
         <Section title="Edexcel Exams" id="edexcel">
-          <Category title="O/L" color="bg-gradient-to-r from-red-300 to-gray-300">
+          <Category title="O/L" color="bg-gradient-to-r from-green-800 to-gray-300">
             <PaperLink title="Biology" href="/pastPapers/edexcel/ol/biology" />
             <PaperLink title="ICT" href="/pastPapers/edexcel/ol/ict" />
             <PaperLink title="Computer Science" href="/pastPapers/edexcel/ol/computer-science" />
@@ -72,7 +72,7 @@ export default function PastPapers() {
             <PaperLink title="Human Biology" href="/pastPapers/edexcel/ol/human-biology" />
             <PaperLink title="Chemistry" href="/pastPapers/edexcel/ol/chemistry" />
           </Category>
-          <Category title="AS" color="bg-gradient-to-r from-purple-300 to-gray-300">
+          <Category title="AS" color="bg-gradient-to-r from-green-800 to-gray-300">
             <PaperLink title="Biology" href="/pastPapers/edexcel/as/biology" />
             <PaperLink title="ICT" href="/pastPapers/edexcel/as/ict" />
             <PaperLink title="Computer Science" href="/pastPapers/edexcel/as/computer-science" />
@@ -82,7 +82,7 @@ export default function PastPapers() {
             <PaperLink title="Human Biology" href="/pastPapers/edexcel/as/human-biology" />
             <PaperLink title="Chemistry" href="/pastPapers/edexcel/as/chemistry" />
           </Category>
-          <Category title="A2" color="bg-gradient-to-r from-red-300 to-gray-300">
+          <Category title="A2" color="bg-gradient-to-r from-green-800 to-gray-300">
             <PaperLink title="Biology" href="/pastPapers/edexcel/a2/biology" />
             <PaperLink title="ICT" href="/pastPapers/edexcel/a2/ict" />
             <PaperLink title="Computer Science" href="/pastPapers/edexcel/a2/computer-science" />
@@ -96,7 +96,7 @@ export default function PastPapers() {
 
         {/* Cambridge Section */}
         <Section title="Cambridge Exams" id="cambridge">
-          <Category title="O/L" color="bg-gradient-to-r from-purple-300 to-gray-300">
+          <Category title="O/L" color="bg-gradient-to-r from-green-700 to-gray-300">
             <PaperLink title="Biology" href="/pastPapers/cambridge/ol/biology" />
             <PaperLink title="ICT" href="/pastPapers/cambridge/ol/ict" />
             <PaperLink title="Computer Science" href="/pastPapers/cambridge/ol/computer-science" />
@@ -106,7 +106,7 @@ export default function PastPapers() {
             <PaperLink title="Human Biology" href="/pastPapers/cambridge/ol/human-biology" />
             <PaperLink title="Chemistry" href="/pastPapers/cambridge/ol/chemistry" />
           </Category>
-          <Category title="AS" color="bg-gradient-to-r from-red-300 to-gray-300">
+          <Category title="AS" color="bg-gradient-to-r from-green-700 to-gray-300">
             <PaperLink title="Biology" href="/pastPapers/cambridge/as/biology" />
             <PaperLink title="ICT" href="/pastPapers/cambridge/as/ict" />
             <PaperLink title="Computer Science" href="/pastPapers/cambridge/as/computer-science" />
@@ -116,7 +116,7 @@ export default function PastPapers() {
             <PaperLink title="Human Biology" href="/pastPapers/cambridge/as/human-biology" />
             <PaperLink title="Chemistry" href="/pastPapers/cambridge/as/chemistry" />
           </Category>
-          <Category title="A2" color="bg-gradient-to-r from-purple-300 to-gray-300">
+          <Category title="A2" color="bg-gradient-to-r from-green-700 to-gray-300">
             <PaperLink title="Biology" href="/pastPapers/cambridge/a2/biology" />
             <PaperLink title="ICT" href="/pastPapers/cambridge/a2/ict" />
             <PaperLink title="Computer Science" href="/pastPapers/cambridge/a2/computer-science" />
@@ -164,7 +164,7 @@ function PaperLink({ title, href }) {
   return (
     <motion.a
       href={href}
-      className="block p-6 bg-white rounded-lg shadow-md hover:shadow-xl text-center text-lg font-medium text-gray-800 hover:bg-gray-100 transition-all"
+      className="block p-6 bg-black rounded-lg shadow-md hover:shadow-xl text-center text-lg font-medium text-gray-50 hover:bg-gray-100 transition-all"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >

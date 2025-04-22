@@ -95,7 +95,7 @@ export default function AboutUs() {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
-        className="bg-gradient-to-r from-red-400 to-gray-600 py-16"
+        className="bg-green-100 to-black py-16"
       >
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-gray-800 text-center mb-12">Our Founders</h2>
@@ -111,7 +111,7 @@ export default function AboutUs() {
               />
               <h3 className="text-3xl font-semibold text-gray-800">Mr. Tanjana Chamkara</h3>
               <p className="text-xl text-gray-100 mt-2">
-                Bsc(PbySci)(USJ), PG Dip(BMIS), AMSLIM, DPM(UK), DBM(UK)
+              Bsc(Phy’Sci)(UoC), PG DipM(SL), AMSLIM, DIFM(UK), DISM(UK)
               </p>
             </div>
 
@@ -125,7 +125,7 @@ export default function AboutUs() {
                 className="rounded-full mb-4"
               />
               <h3 className="text-3xl font-semibold text-gray-800">Ms. Madhara Wedhage</h3>
-              <p className="text-xl text-gray-100 mt-2">BT(LU), MISU(UC Reading)</p>
+              <p className="text-xl text-gray-100 mt-2">BIT(UoC), MIS(UoC Reading)</p>
             </div>
           </div>
         </div>

@@ -30,27 +30,27 @@ export default function TeacherPanel() {
   ];
 
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className="bg-gradient-to-br from-green-100 via-white to-red-100 min-h-screen">
       <Nav />
-      <div className="container mx-auto px-14 py-20">
-        <h1 className="text-5xl sm:text-6xl font-bold text-center text-gray-800 mb-12">
+      <div className="container mx-auto px-6 sm:px-14 py-20">
+        <h1 className="text-5xl font-bold text-center text-black mb-16">
           Our Teachers
         </h1>
 
-        <div className="flex flex-col gap-16">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-10">
           {teachers.map((teacher, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-md flex flex-col sm:flex-row items-center gap-6 p-6 hover:shadow-xl transition duration-300"
+              className="bg-white border border-gray-300 rounded-3xl shadow-lg p-6 sm:p-8 hover:shadow-2xl transition duration-300 flex flex-col items-center sm:items-start sm:flex-row gap-8"
             >
               <img
                 src={teacher.image}
                 alt={teacher.name}
-                className="w-50 h-50 rounded-full"
+                className="w-36 h-36 sm:w-44 sm:h-44 object-cover rounded-full border-4 border-black shadow-md"
               />
               <div className="text-center sm:text-left">
-                <h2 className="text-3xl font-semibold text-gray-800">{teacher.name}</h2>
-                <p className="text-gray-600 mt-3 text-xlsm leading-relaxed max-w-3xl">
+                <h2 className="text-2xl font-bold text-red-800 mb-2">{teacher.name}</h2>
+                <p className="text-gray-700 text-base leading-relaxed max-w-xl">
                   {teacher.description}
                 </p>
               </div>

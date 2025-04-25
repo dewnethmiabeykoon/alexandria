@@ -79,7 +79,7 @@ const courses = [
   {
     title: "Python Programming",
     description: "Discover the power of Python for data analysis, AI, and web development.",
-    image: "/images/python.png",
+    image: "/images/python-ad.png",
     slug: "python",
   },
 ];
